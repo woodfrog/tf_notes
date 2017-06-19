@@ -66,3 +66,15 @@
 		keep_dims is useful for operations like normalization, since we have to compute the sum of entries along some axises a		nd then applying elementwise multiplication.
 	
 
+- tf.gather 
+
+	gather(
+	    params,
+	    indices,
+	    validate_indices=None,
+	    name=None
+	)
+
+	Gather slices from params according to indices.
+	indices should be an integer tensor of any dimension, but usually 0-D or 1-D. 
+	The output has the shape indices.shape + params.shape[1:]
