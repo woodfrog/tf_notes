@@ -91,3 +91,20 @@
 	Gather slices from params according to indices.
 	indices should be an integer tensor of any dimension, but usually 0-D or 1-D. 
 	The output has the shape indices.shape + params.shape[1:]
+
+
+- tf.stack
+
+	stack(
+	    values,
+	    axis=0,
+	    name='stack'
+	)
+
+	Stacks a list of rank-R tensors into one rank-(R+1) tensor.
+	Packs the list of tensors in values into a tensor with rank one higher than each 
+	tensor in values, by packing them along the axis dimension. 
+	Given a list of length N of tensors of shape (A, B, C);
+
+	if axis == 0 then the output tensor will have the shape (N, A, B, C). if axis == 1 then 
+	the output tensor will have the shape (A, N, B, C). Etc.
