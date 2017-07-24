@@ -14,7 +14,8 @@
 
 - Cell states C and hidden states H are both passed to the next time step, so there are actually two links from the current one to the next, but the hidden state is also considered as LSTM output. Therefore IMO it's more suitable to use **lstm_output** to name the hidden states and use **cell_state** for referring to the C.
 
-- In tensorflow, the lstm cell always return output and state. The output value is a always of size [batch\_size, output\_size (or unit\_size)] **it's the hidden state as discussed above, the returned state is the cell state instead of hidden state.**
+- In tensorflow, the lstm cell always return **output and state**. The output value is a always of size [batch\_size, output\_size (or unit\_size)] **it's the hidden state as discussed above, the returned state is directly used as the input to the next time step, so it's actually a named tuple containing both h and c! (not only c, I made a mistake before)**. The named tuple here is a class called LSTMStateTuple
+
 
 
 
